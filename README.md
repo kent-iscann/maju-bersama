@@ -1,46 +1,17 @@
-# PT Maju Bersama Manufacturing Wiki
+# Quartz v4
 
-A fictional company knowledge base built using Karpathy's LLM Wiki pattern. This wiki serves as an illustration of a structured organizational memory system.
+> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
 
-## Company Overview
+Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
 
-**PT Maju Bersama Manufacturing** is a fictional Indonesian textile and garment manufacturer based in Bandung, West Java. Founded in 1998, the company employs ~1,200 people across two factories.
+🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
 
-## Wiki Structure
+[Join the Discord Community](https://discord.gg/cRFFHYye7t)
 
-- `entries/summaries/` — Company overview, case studies, annual reports
-- `entries/entities/` — People, organizations, locations
-- `entries/concepts/` — Manufacturing processes, products, business concepts
-- `entries/analysis/` — Strategic analysis, financial performance, comparisons
-- `SCHEMA.md` — Wiki conventions and workflows
-- `index.md` — Content catalog with timeline
-- `log.md` — Activity log
+## Sponsors
 
-## Features
-
-- ✅ 29 interconnected wiki pages
-- ✅ Full wikilink support (`[[page-name]]`)
-- ✅ Company timeline (1998-2024)
-- ✅ Decision tracking with board meeting minutes
-- ✅ Financial analysis with scored assessments
-- ✅ Fake but realistic Indonesian business context
-
-## Quick Links
-
-- [Wiki Index](index.md) — Start here
-- [Company Profile](entries/summaries/profil-perusahaan.md)
-- [Key Decisions 2023](entries/summaries/keputusan-2023.md)
-- [Surabaya Expansion Analysis](entries/analysis/analisis-strategi-ekspansi.md)
-
-## Deployment
-
-This wiki can be deployed using [Quartz](https://quartz.jzhao.cc/) as a static site.
-
-```bash
-npx quartz build
-npx quartz build --serve  # preview locally
-```
-
-## License
-
-This is fictional data for illustration purposes only.
+<p align="center">
+  <a href="https://github.com/sponsors/jackyzha0">
+    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
+  </a>
+</p>
