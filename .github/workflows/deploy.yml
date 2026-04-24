@@ -2,8 +2,7 @@ name: Deploy Quartz Site to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -12,36 +11,34 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone Repository
-        uses: actions/checkout@v6
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          submodules: recursive
+          fetch-depth: 0  # Needed for git history (CreatedModifiedDate plugin)
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
+          cache: npm
 
       - name: Install Dependencies
-        run: npm install -g quartz
+        run: npm install
 
-      - name: Build Quartz Site
-        run: |
-          quartz build
-        env:
-          QUARTZ_CONFIG_PATH: content/config.yaml
+      - name: Build Quartz
+        run: npx quartz build
 
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_site/
+          path: _site
 
   deploy:
     environment:
@@ -52,4 +49,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v4
